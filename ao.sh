@@ -3,8 +3,11 @@
 
 
 n=$( grep -n background_opacity ~/.alacritty.yml | awk '{print $2}')
+if [ $# -eq 0 ]; then
+	echo "need an argument: u for increase opacity d to decrease number 0-1.0 to specific opacity"
+	new=$n
 
-if [ $1 == 'u' ]
+elif [ $1 == '-h' ]
 then
 	echo "Script to change alacritty terminal opacity"
 	echo "only one argument:"
@@ -33,7 +36,6 @@ elif [[ (( $1 == '1' )) ]]
 then
 	new=$1
 else
-	echo "need an argument: u for increase opacity d to decrease number 0-1.0 to specific opacity"
 	new=$n
 fi
 
