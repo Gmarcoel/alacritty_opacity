@@ -9,12 +9,14 @@ if [ $# -eq 0 ]; then
 
 elif [ $1 == '-h' ]
 then
-	echo "Script to change alacritty terminal opacity"
-	echo "only one argument:"
-	echo "	u: increase 0.1 opacity"
-	echo "	d: decrease 0.1 opacity"
-	echo "	n: any number from 0 to 1 to give a specific opacity"
-	echo "		ex: 0.7"
+	cat << EOF
+Script to change alacritty terminal opacity
+only one argument:
+	u: increase 0.1 opacity
+	d: decrease 0.1 opacity
+	n: any number from 0 to 1 to give a specific opacity
+		ex: 0.7
+EOF
 elif [ $1 == 'u' ]
 then
 	new=$(echo $n 0.1 | awk '{print $1 + $2}')
